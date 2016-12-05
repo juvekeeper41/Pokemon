@@ -84,7 +84,73 @@ public class PokemonPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		pokedexSelector.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				int selected = pokedexSelector.getSelectedIndex();
+				nameField.setText(baseController.getPokedex().get(selected).getName());
+				numberField.setText(baseController.getPokedex().get(selected.getNumber() + "");
+				combatField.setText(baseController.getPokedex().get(selected.getAttackPoints() + "");
+				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
+				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
+				advancedArea.setText(baseController.getPokedex().get(selected).getClass().getPokemonInformation()
+						+ "\n" + baseController.getPokedex().get(selected).getPokemonTypes());
+				changeColorBasedOnData(baseController.getPokedex().get(selected).getPokemonTypes());
+				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
+			}
+	});
+
+	private void changeColorBaseOnData(String data)
+	{
+		if (data.contains("Electric"))
+		{
+			this.setBackground(Color.YELLOW);			
+		}
+		else if (data.contains("Fire"))
+		{
+			this.setBackground(Color.RED);
+		}
+		else if (data.contains("Grass"))
+		{
+			this.setBackground(Color.GREEN);
+		}
+		else if (data.contains("Water"))
+		{
+			this.setBackground(Color.BLUE);
+		}
+		else if (data.contains("Rock"))
+		{
+			this.setBackground(Color.GRAY);
+		}
+		else 
+		{
+			this.setBackground(Color.CYAN);
+		}
+		
+		repaint();
+	}
 	
+	private void changeImageDisplay(String name)
+	{
+		String path = "/poke/view/images/";
+		String defaultName = "ultraball";
+		String extension = ".png";
+	}
+	
+	private boolean isValidDouble(String input)
+	{
+		
+	}
+	
+	private boolean isValidInteger(String input)
+	{
+		
+	}
+	
+	private boolean isValidName(String name)
+	{
+		
 	}
 	
 	private void setupLayout()
