@@ -136,6 +136,17 @@ public class PokemonPanel extends JPanel
 		String path = "/poke/view/images/";
 		String defaultName = "ultraball";
 		String extension = ".png";
+		try
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+			pokemonLabel.setIcon(pokemonIcon);
+		}
+		catch (NullPointerException missingFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+			pokemonLabel.setIcon(pokemonIcon);
+		}
+		repaint();
 	}
 	
 	private boolean isValidDouble(String input)
