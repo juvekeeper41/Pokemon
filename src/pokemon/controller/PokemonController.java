@@ -31,7 +31,7 @@ public class PokemonController
 		pokedex.add(new Bulbasaur("Hydroponic"));
 		pokedex.add(new Gyarados("Water Elemental"));
 		pokedex.add(new Zapados("Lightning Strike"));
-		pokedex.add(new Blaziken("Fire Elemental"));
+		pokedex.add(new Blaziken("Fire Serpent"));
 	}
 	
 	public String [] buildPokedexText()
