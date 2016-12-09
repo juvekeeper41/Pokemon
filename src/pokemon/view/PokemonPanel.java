@@ -4,8 +4,11 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Dimension;
 import pokemon.controller.PokemonController;
-
-
+import java.awt.Event;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 public class PokemonPanel extends JPanel
 {
@@ -100,7 +103,62 @@ public class PokemonPanel extends JPanel
 				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 			}
 	});
-
+			
+	this.addMouseListener(new MouseListener()
+	{
+		public void mouseEntered(MouseEvent entered)
+		{
+			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is in!");
+		}
+		
+		public void mouseExited(MouseEvent exited)
+		{
+			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is out!");
+		}
+		
+		public void mousePressed(MouseEvent pressed)
+		{
+			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was pressed!");
+		}
+		
+		public void mouseReleased(MouseEvent released)
+		{
+			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was released!");
+		}
+		
+		public void MouseClicked(MouseEvent click)
+		{
+			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was clicked!");
+		}
+		
+	});
+	
+	this.addMouseMotionListener(new MouseMotionListener()
+			{
+				public void mouseDragged(MouseEvent dragged)
+				{
+					setRandomColor();
+					if(Math.abs(dragged.getX() - updateButton.getX()) < 5 || (Math.abs(dragged.getY() - updateButton.getY()) < 5))
+						{
+							updateButton.setLocation(dragged.getX(), dragged.getY() + 20);
+						}
+	
+				}
+				
+				public void mouseMoved(MouseEvent moved)
+				{
+					JOptionPane.ShowMessageDialog(baseController.getBaseFrame(), "Moving from X:" + moved.getX() + ", Y:" + moved.getY());
+				}
+			});
+	}
+	
+	private void setRandomColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+	}
+	
 	private void changeColorBaseOnData(String data)
 	{
 		if (data.contains("Electric"))

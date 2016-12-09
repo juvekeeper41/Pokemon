@@ -1,23 +1,22 @@
 package pokemon.controller;
 
-public class PokemonController
-{
+import java.util.ArrayList;
+import java.util.Map;
+import pokemon.model.*;
+import pokemon.view.PokemonFrame;
+import java.util.HashMap;
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	baseFrame = new PokemonFrame(this);
-	}
+	public class PokemonController
+	{
+		private BaseFrame baseFrame;
+		private ArrayList<Pokemon> pokedex;
+		
+		public PokemonController()
+		{
+			pokedex = newArrayList<Pokemon>();
+			buildPokedex();
+			baseFrame = new baseFrame(this);
+		}
 
 	public void start()
 	{
@@ -37,11 +36,31 @@ public class PokemonController
 	public String [] buildPokedexText()
 	{
 		String [] pokemonNames = new String [pokedex.size()];
-		
 		for(int index = 0; index < pokedex.size(); index++)
 		{
 			pokemonNames[index] = pokedex.get(index).getName();
 		}
+		
+		return pokemonNames;
+	}
+	
+	public void updateSelected(int index, String name, int combat, int health, double speed)
+	{
+		Pokemon current = pokedex.get(index);
+		current.setName(name);
+		current.setAttackPoints(combat);
+		current.setSpeed(speed);
+		current.setHitPoints(health);
+	}
+	
+	public ArrayList<Pokemon> getPokedex()
+	{
+		return pokedex;
+	}
+	public PokemonFrame getBaseFrame()
+	{
+		
+	}
 		
 }
 
