@@ -1,6 +1,7 @@
 package pokemon.model;
 
-public class Water 
+public interface Water 
 {
-
+	public int aquaJet();
+	public int bubble();
 }

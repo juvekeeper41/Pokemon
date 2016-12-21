@@ -2,8 +2,9 @@ package pokemon.model;
 
 public abstract class Pokemon
 {
-	private int healthPoints;
+	private int hitPoints;
 	private int attackPoints;
+	
 	private double speed;
 	private int number;
 	private String name;
@@ -37,14 +38,60 @@ public abstract class Pokemon
 		return pokemonTypes;
 	}
 	
-	public String toString()
-	{
-		
-	}
-	
 	public String getPokemonInformation()
 	{
 		String pokemonInfo = "This Pokemon is of type: " + this.getClass().getSimpleName();
-		
+		return pokemonInfo;
 	}
+	
+	public int getHitPoints() 
+	{
+		return hitPoints;
+	}
+
+	public void setHitPoints(int hitPoints) 
+	{
+		this.hitPoints = hitPoints;
+	}
+
+	public int getAttackPoints() 
+	{
+		return attackPoints;
+	}
+
+	public void setAttackPoints(int attackPoints) 
+	{
+		this.attackPoints = attackPoints;
+	}
+
+	public double getSpeed() 
+	{
+		return speed;
+	}
+
+	public void setSpeed(double speed) 
+	{
+		this.speed = speed;
+	}
+
+	public int getNumber() 
+	{
+		return number;
+	}
+
+	public void setNumber(int number) 
+	{
+		this.number = number;
+	}
+
+	public String getName() 
+	{
+		return name;
+	}
+
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+
 }

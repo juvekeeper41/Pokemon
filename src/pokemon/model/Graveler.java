@@ -7,18 +7,13 @@ public class Graveler extends Pokemon implements Rock
 		super("Graveler", 75);
 	}
 	
-	public Graveler(String name)
+	public int tackle()
 	{
-		super(name, 75);
+		return 30;
 	}
 	
 	public int rockSmash()
 	{
-		return 25;
-	}
-	
-	public int magnetPull()
-	{
-		return this.getAttackPoints() * 15;
+		return 30;
 	}
 }

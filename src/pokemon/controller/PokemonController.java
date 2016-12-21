@@ -8,11 +8,12 @@ import java.util.HashMap;
 
 	public class PokemonController
 	{
-		private BaseFrame baseFrame;
+		private PokemonFrame baseFrame;
 		private ArrayList<Pokemon> pokedex;
 		
 		public PokemonController()
 		{
+			
 			pokedex = newArrayList<Pokemon>();
 			buildPokedex();
 			baseFrame = new baseFrame(this);
@@ -20,17 +21,16 @@ import java.util.HashMap;
 
 	public void start()
 	{
-		JOptionPane.showMessageDialog(baseFrame, "Welcome to Pokemon Inheritance!");
 		
 	}
 	
 	private void buildPokedex()
 	{
-		pokedex.add(new Graveler("Graphite"));
-		pokedex.add(new Bulbasaur("Hydroponic"));
-		pokedex.add(new Gyarados("Water Elemental"));
-		pokedex.add(new Zapados("Lightning Strike"));
-		pokedex.add(new Blaziken("Fire Serpent"));
+		pokedex.add(new Graveler());
+		pokedex.add(new Bulbasaur());
+		pokedex.add(new Gyarados());
+		pokedex.add(new Zapados());
+		pokedex.add(new Blaziken());
 	}
 	
 	public String [] buildPokedexText()
@@ -59,7 +59,7 @@ import java.util.HashMap;
 	}
 	public PokemonFrame getBaseFrame()
 	{
-		
+		return baseFrame;
 	}
 		
 }

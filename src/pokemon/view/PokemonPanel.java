@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.Dimension;
 import pokemon.controller.PokemonController;
 import java.awt.Event;
+import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -92,65 +93,66 @@ public class PokemonPanel extends JPanel
 			public void actionPerformed(ActionEvent selection)
 			{
 				int selected = pokedexSelector.getSelectedIndex();
+				System.out.println(baseController.getPokedex().get(selected));
 				nameField.setText(baseController.getPokedex().get(selected).getName());
-				numberField.setText(baseController.getPokedex().get(selected.getNumber() + "");
-				combatField.setText(baseController.getPokedex().get(selected.getAttackPoints() + "");
+				numberField.setText(baseController.getPokedex().get(selected).getNumber() + "");
+				combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
 				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
-				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
-				advancedArea.setText(baseController.getPokedex().get(selected).getClass().getPokemonInformation()
-						+ "\n" + baseController.getPokedex().get(selected).getPokemonTypes());
-				changeColorBasedOnData(baseController.getPokedex().get(selected).getPokemonTypes());
+				healthField.setText(baseController.getPokedex().get(selected).getHitPoints() + "");
+				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation() + "\n" + baseController.getPokedex().get(selected).getPokemonTypes());
 				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 			}
-	});
-			
-	this.addMouseListener(new MouseListener()
-	{
-		public void mouseEntered(MouseEvent entered)
-		{
-			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is in!");
-		}
-		
-		public void mouseExited(MouseEvent exited)
-		{
-			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is out!");
-		}
-		
-		public void mousePressed(MouseEvent pressed)
-		{
-			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was pressed!");
-		}
-		
-		public void mouseReleased(MouseEvent released)
-		{
-			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was released!");
-		}
-		
-		public void MouseClicked(MouseEvent click)
-		{
-			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was clicked!");
-		}
-		
-	});
-	
-	this.addMouseMotionListener(new MouseMotionListener()
-			{
-				public void mouseDragged(MouseEvent dragged)
-				{
-					setRandomColor();
-					if(Math.abs(dragged.getX() - updateButton.getX()) < 5 || (Math.abs(dragged.getY() - updateButton.getY()) < 5))
-						{
-							updateButton.setLocation(dragged.getX(), dragged.getY() + 20);
-						}
-	
-				}
-				
-				public void mouseMoved(MouseEvent moved)
-				{
-					JOptionPane.ShowMessageDialog(baseController.getBaseFrame(), "Moving from X:" + moved.getX() + ", Y:" + moved.getY());
-				}
-			});
+		});
 	}
+	
+			
+//	this.addMouseListener(new MouseListener()
+//	{
+//		public void mouseEntered(MouseEvent entered)
+//		{
+//			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is in!");
+//		}
+//		
+//		public void mouseExited(MouseEvent exited)
+//		{
+//			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse is out!");
+//		}
+//		
+//		public void mousePressed(MouseEvent pressed)
+//		{
+//			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was pressed!");
+//		}
+//		
+//		public void mouseReleased(MouseEvent released)
+//		{
+//			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was released!");
+//		}
+//		
+//		public void MouseClicked(MouseEvent click)
+//		{
+//			//JOptionPane.showMessageDialog(baseController.getBaseFrame(), "The mouse was clicked!");
+//		}
+//		
+//	});
+	
+//	this.addMouseMotionListener(new MouseMotionListener()
+//			{
+//				public void mouseDragged(MouseEvent dragged)
+//				{
+//					setRandomColor();
+//					if(Math.abs(dragged.getX() - updateButton.getX()) < 5 || (Math.abs(dragged.getY() - updateButton.getY()) < 5))
+//						{
+//							updateButton.setLocation(dragged.getX(), dragged.getY() + 20);
+//						}
+//	
+//				}
+//				
+//				public void mouseMoved(MouseEvent moved)
+//				{
+//					JOptionPane.ShowMessageDialog(baseController.getBaseFrame(), "Moving from X:" + moved.getX() + ", Y:" + moved.getY());
+//				}
+//			});
+//	}
 	
 	private void setRandomColor()
 	{
@@ -207,17 +209,17 @@ public class PokemonPanel extends JPanel
 		repaint();
 	}
 	
-	private boolean isValidDouble(String input)
+	private boolean checkValidInteger(String input)
 	{
 		
 	}
 	
-	private boolean isValidInteger(String input)
+	private boolean checkValidInteger(String input)
 	{
 		
 	}
 	
-	private boolean isValidName(String name)
+	private boolean checkValidName(String name)
 	{
 		
 	}
