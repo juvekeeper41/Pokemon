@@ -1,9 +1,11 @@
-package pokemon.view;
+package poke.view;
 
 import java.awt.Color;
 import javax.swing.*;
+
+import poke.controller.PokemonController;
+
 import java.awt.Dimension;
-import pokemon.controller.PokemonController;
 import java.awt.Event;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -209,21 +211,6 @@ public class PokemonPanel extends JPanel
 		repaint();
 	}
 	
-	private boolean checkValidInteger(String input)
-	{
-		
-	}
-	
-	private boolean checkValidInteger(String input)
-	{
-		
-	}
-	
-	private boolean checkValidName(String name)
-	{
-		
-	}
-	
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.SOUTH, updateButton, -10, SpringLayout.SOUTH, this);
@@ -262,6 +249,50 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, pokemonLabel, 20, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, pokemonLabel, -218, SpringLayout.SOUTH, this);
 		
+	}
+	
+
+	private boolean checkParseDouble(String input)
+	{
+		boolean isParseable = false;
+		try
+		{
+			Double.parseDouble(input);
+			isParseable = true;
+		}
+		catch(NumberFormatException inputError)
+		{
+			JOptionPane.showMessageDialog(this, "Please type an integer where an integer is required!");
+		}
+		return isParseable;
+	}
+	
+	private boolean checkParseInteger(String input)
+	{
+		boolean isParseable = false;
+		
+		try
+		{
+			Integer.parseInt(input);
+			isParseable = true;
+		}
+		catch(NumberFormatException inputError)
+		{
+			JOptionPane.showMessageDialog(this, "Please provide a double where a double is required!");
+		}
+		
+		return isParseable;
+	}
+	
+	private boolean checkValidName(String name)
+	{
+		boolean validName = true;
+		if(name.length() > 3)
+		{
+			validName = false;
+		}
+		
+		return validName;
 	}
 	
 }

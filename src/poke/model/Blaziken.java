@@ -1,4 +1,4 @@
-package pokemon.model;
+package poke.model;
 
 public class Blaziken extends Pokemon implements Fire
 {

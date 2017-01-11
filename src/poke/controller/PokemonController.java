@@ -1,9 +1,9 @@
-package pokemon.controller;
+package poke.controller;
 
 import java.util.ArrayList;
 import java.util.Map;
-import pokemon.model.*;
-import pokemon.view.PokemonFrame;
+import poke.model.*;
+import poke.view.PokemonFrame;
 import java.util.HashMap;
 
 	public class PokemonController
@@ -14,9 +14,9 @@ import java.util.HashMap;
 		public PokemonController()
 		{
 			
-			pokedex = newArrayList<Pokemon>();
+			pokedex = new ArrayList<Pokemon>();
 			buildPokedex();
-			baseFrame = new baseFrame(this);
+			baseFrame = new PokemonFrame(this);
 		}
 
 	public void start()
