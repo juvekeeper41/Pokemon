@@ -196,7 +196,7 @@ public class PokemonPanel extends JPanel
 	private void changeImageDisplay(String name)
 	{
 		String path = "/poke/view/images/";
-		String defaultName = "ultraball";
+		String defaultName = "pokeball";
 		String extension = ".png";
 		try
 		{
